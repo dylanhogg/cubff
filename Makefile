@@ -28,7 +28,9 @@ else
 
 	ifeq (${MACOS}, 1)
 		FLAGS += -Xclang -fopenmp
-		LINK_FLAGS += -lomp -undefined dynamic_lookup
+		# LINK_FLAGS += -lomp -undefined dynamic_lookup
+		# LINK_FLAGS += -L/opt/homebrew/Cellar/libomp/18.1.8/lib -lomp -undefined dynamic_lookup
+		LINK_FLAGS += -L/opt/homebrew/lib/ -lomp -undefined dynamic_lookup
 	else
 		FLAGS += -fopenmp
 	endif

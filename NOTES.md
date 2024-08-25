@@ -26,3 +26,33 @@ Option 2: Link libomp and update Makefile to point to the linked library
 make
 bin/main --lang bff_noheads
 ```
+
+lang options:
+
+```
+bff
+bff_noheads
+bff_noheads_4bit
+bff8
+bff8_noheads
+forth
+forthtcopy
+forthtrivial
+```
+
+## Python file bindings
+
+Set up a virtual environment and install pybind11:
+
+```bash
+python3 -m venv venv
+. ./venv/bin/activate
+pip install pybind11
+```
+
+Build with Python bindings:
+
+```bash
+make PYTHON=1
+python3 cubff.py
+```
